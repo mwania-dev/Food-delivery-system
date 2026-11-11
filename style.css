@@ -1,0 +1,524 @@
+/* ---------- 1. Variables (change colors in one place) ---------- */
+:root {
+  --bg: #fff8f3;
+  --surface: #ffffff;
+  --text: #2a1f1a;
+  --muted: #7a6a60;
+  --brand: #e8552b;
+  --brand-2: #ffb703;
+  --line: #f0e2d8;
+}
+
+/* ---------- 2. Reset and base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- 3. Buttons ---------- */
+.btn,
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 18px;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn:hover,
+button:hover {
+  opacity: 0.9;
+}
+
+button.small {
+  padding: 6px 12px;
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+button.full {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* ---------- 4. Navbar ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--brand);
+}
+
+.navbar nav {
+  display: flex;
+  gap: 18px;
+  margin-left: auto;
+}
+
+.navbar nav a {
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  color: var(--brand);
+}
+
+#cartCount {
+  background: var(--brand-2);
+  color: #000;
+  border-radius: 99px;
+  padding: 0 7px;
+  font-size: 0.85rem;
+}
+
+/* ---------- 5. Page sections ---------- */
+main section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+main section h2 {
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+}
+
+/* ---------- 6. Hero ---------- */
+.hero {
+  max-width: none;
+  text-align: center;
+  padding: 80px 24px;
+  background: linear-gradient(135deg, var(--brand-2), var(--brand));
+  color: #fff;
+}
+
+/* ---------- 13. Order confirmation (Step 8) ---------- */
+.success-icon {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.muted {
+  color: var(--muted);
+  margin: 6px 0 14px;
+}
+
+.details {
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.modal-box h3 {
+  margin-top: 14px;
+}
+
+/* ---------- 14. Dark mode, offers, footer, polish (Step 9) ---------- */
+:root[data-theme="dark"] {
+  --bg: #17110e;
+  --surface: #241b17;
+  --text: #f6ebe4;
+  --muted: #b3a196;
+  --line: #3a2d26;
+  color-scheme: dark;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.menu-toggle {
+  display: none;   /* only shown on mobile */
+}
+
+.restaurant-tag {
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.offers {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.offer {
+  border-radius: 16px;
+  padding: 22px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.offer strong {
+  font-size: 1.6rem;
+}
+
+.offer .btn {
+  background: #fff;
+  color: #222;
+  margin-top: 6px;
+}
+
+.offer-1 { background: linear-gradient(135deg, #e8552b, #b8300f); }
+.offer-2 { background: linear-gradient(135deg, #2a9d8f, #16665c); }
+.offer-3 { background: linear-gradient(135deg, #7b4fd6, #4a2a99); }
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto 16px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  text-align: left;
+}
+
+.footer-grid a {
+  display: block;
+}
+
+.footer-grid a:hover {
+  color: var(--brand);
+}
+
+footer .copy {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  max-width: 700px;
+  margin: 0 auto 12px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.hero .btn {
+  background: #fff;
+  color: var(--brand);
+}
+
+/* ---------- 7. Footer ---------- */
+footer {
+  margin-top: 40px;
+  padding: 24px;
+  text-align: center;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+/* ---------- 8. Cards and grid (Step 3) ---------- */
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-emoji {
+  font-size: 3rem;
+  text-align: center;
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.card h3 {
+  font-size: 1.05rem;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.badge.open   { background: #d9f3e4; color: #1b8a4b; }
+.badge.closed { background: #fbdcd8; color: #c0392b; }
+
+input[type="text"] {
+  font: inherit;
+  width: 100%;
+  max-width: 340px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.empty {
+  color: var(--muted);
+  padding: 20px;
+}
+
+/* ---------- 9. Category chips and menu cards (Step 4) ---------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 99px;
+}
+
+.chip.active {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+.desc {
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--brand);
+}
+
+/* ---------- 10. Menu toolbar (Step 5) ---------- */
+.toolbar {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 2fr 1fr 1fr;
+  margin-bottom: 16px;
+}
+
+.toolbar input[type="text"],
+.toolbar select {
+  font: inherit;
+  width: 100%;
+  max-width: none;
+  margin-bottom: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+/* ---------- 11. Cart drawer (Step 6) ---------- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: flex-end;
+  z-index: 100;
+}
+
+.overlay.show {
+  display: flex;
+}
+
+.drawer {
+  background: var(--surface);
+  width: min(420px, 100%);
+  height: 100%;
+  overflow-y: auto;
+  padding: 18px;
+}
+
+.drawer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cart-line {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.total {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 8px 0;
+}
+
+#toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 99px;
+  z-index: 200;
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
+}
+
+#toast.show {
+  opacity: 1;
+}
+
+/* ---------- 12. Mobile (keep this LAST) ---------- */
+@media (max-width: 700px) {
+  .navbar nav {
+    display: none;
+  }
+
+  .navbar #cartBtn {
+    margin-left: auto;
+  }
+
+  .hero {
+    padding: 50px 16px;
+  }
+
+  .toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .toolbar input[type="text"] {
+    grid-column: 1 / -1;
+  }
+}
+/* ---------- 12. Checkout modal (Step 7) ---------- */
+.overlay.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: var(--surface);
+  width: min(500px, 94%);
+  max-height: 92%;
+  overflow-y: auto;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.modal-box h3 {
+  margin-bottom: 8px;
+}
+
+.modal-box label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 12px 0 4px;
+}
+
+.modal-box input,
+.modal-box textarea {
+  font: inherit;
+  width: 100%;
+  max-width: none;
+  margin-bottom: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.modal-box input:focus,
+.modal-box textarea:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 1px;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 0.82rem;
+  min-height: 1.2em;
+}
