@@ -4,7 +4,7 @@ A responsive food delivery website where users can browse restaurants,
 explore menus, build a cart and place an order online.
 Built for the Sqrock IT Solutions Web Development Internship (Phase 2).
 
-**Live demo:** [add your link here]
+**Live demo:** [ https://mwania-dev.github.io/Food-delivery-system/]
 
 ![Homepage](screenshots/home.png)
 
