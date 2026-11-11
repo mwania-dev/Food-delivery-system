@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitezy – Food Delivery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+  <a href="#home" class="logo">🍴 Bitezy</a>
+  <nav id="mainNav">
+    <a href="#home">Home</a>
+    <a href="#restaurants">Restaurants</a>
+    <a href="#menu">Menu</a>
+    <a href="#offers">Offers</a>
+  </nav>
+  <button class="ghost small" id="themeBtn" aria-label="Toggle dark mode">🌓</button>
+  <button id="cartBtn">🛒 Cart (<span id="cartCount">0</span>)</button>
+  <button class="ghost small menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+</header>
+
+  <main>
+    <section id="home" class="hero">
+      <h1>Hungry? Get your favourite food delivered fast.</h1>
+      <p>Order from the best restaurants around you.</p>
+      <a href="#menu" class="btn">Order Now</a>
+    </section>
+
+    <section id="categories">
+      <h2>Categories</h2>
+      <div class="chips" id="categoryChips"></div>
+    </section>
+
+    <section id="restaurants">
+      <h2>Popular Restaurants</h2>
+      <input type="text" id="restaurantSearch" placeholder="Search restaurants by name…">
+      <div class="grid" id="restaurantGrid"></div>
+    </section>
+
+    <section id="featured">
+  <h2>Featured Food</h2>
+  <div class="grid" id="featuredGrid"></div>
+</section>
+
+  <section id="offers">
+  <h2>Offers &amp; Discounts</h2>
+  <div class="offers">
+    <div class="offer offer-1">
+      <strong>20% OFF</strong>
+      <p>On your first order. Code: WELCOME20</p>
+      <a href="#menu" class="btn">Order now</a>
+    </div>
+    <div class="offer offer-2">
+      <strong>Free delivery</strong>
+      <p>On all orders above $30.</p>
+      <a href="#menu" class="btn">Order now</a>
+    </div>
+    <div class="offer offer-3">
+      <strong>Combo deals</strong>
+      <p>Burger and a drink from $9.99.</p>
+      <a href="#menu" class="btn">Order now</a>
+    </div>
+  </div>
+</section>  
+
+    <section id="menu">
+      <h2>Our Menu</h2>
+      <div id="restaurantTag" class="meta restaurant-tag"></div>
+<div class="grid" id="menuGrid"></div>
+
+      <div class="toolbar">
+        <input type="text" id="foodSearch" placeholder="Search food by name…">
+
+        <select id="priceFilter">
+          <option value="all">Any price</option>
+          <option value="low">Under $8</option>
+          <option value="mid">$8 – $12</option>
+          <option value="high">Over $12</option>
+        </select>
+
+        <select id="sortBy">
+          <option value="popularity">Most popular</option>
+          <option value="rating">Top rated</option>
+          <option value="priceLow">Price: low to high</option>
+          <option value="priceHigh">Price: high to low</option>
+        </select>
+      </div>
+
+      <div class="grid" id="menuGrid"></div>
+    </section>
+  </main>
+
+  <footer>
+  <div class="footer-grid">
+    <div>
+      <strong>🍴 Bitezy</strong>
+      <p>Fresh food, delivered fast.</p>
+    </div>
+    <div>
+      <strong>Contact</strong>
+      <p>hello@bitezy.example</p>
+      <p>+254 700 000 000</p>
+      <p>Nairobi, Kenya</p>
+    </div>
+    <div>
+      <strong>Follow us</strong>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">X / Twitter</a>
+    </div>
+  </div>
+  <p class="copy">&copy; 2026 Bitezy</p>
+</footer>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="cartOverlay">
+    <aside class="drawer">
+      <div class="drawer-head">
+        <h2>Your Cart</h2>
+        <button class="ghost small" id="closeCart">✕</button>
+      </div>
+      <div id="cartItems"></div>
+      <div id="cartFooter"></div>
+    </aside>
+  </div>
+  <!-- Checkout modal -->
+<div class="overlay center" id="checkoutOverlay">
+  <div class="modal-box">
+    <div class="drawer-head">
+      <h2>Checkout</h2>
+      <button class="ghost small" id="closeCheckout">✕</button>
+    </div>
+
+    <div id="checkoutSummary"></div>
+
+    <form id="checkoutForm" novalidate>
+      <label for="custName">Full name</label>
+      <input type="text" id="custName" autocomplete="name">
+      <div class="error" id="errName"></div>
+
+      <label for="custPhone">Phone number</label>
+      <input type="tel" id="custPhone" autocomplete="tel" placeholder="+254 700 000 000">
+      <div class="error" id="errPhone"></div>
+
+      <label for="custAddress">Delivery address</label>
+      <textarea id="custAddress" rows="3"></textarea>
+      <div class="error" id="errAddress"></div>
+
+      <button type="submit" class="full">Place Order</button>
+    </form>
+  </div>
+</div>
+<!-- Order confirmation modal -->
+<div class="overlay center" id="confirmOverlay">
+  <div class="modal-box" id="confirmBox"></div>
+</div>
+
+  <div id="toast"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
